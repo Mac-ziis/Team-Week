@@ -39,5 +39,6 @@ function updateReceipt(plant) {
 
 function showReceipt() {
   const receipt = document.getElementById('receipt');
-  
+  receipt.classList.remove('hidden');
 }
+
