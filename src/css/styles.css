@@ -1,3 +1,64 @@
 body {
-  background-color: lightblue;
+  text-align: center;
+  background: linear-gradient(to bottom, lightblue, blue);
+}
+
+.container {
+  justify-content: flex-start;
+  align-items: center;
+  position: relative; 
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  width: 3px; 
+  height: 100%; 
+  background-color: green;
+  left: 50%; 
+  transform: translateX(-50%); 
+  z-index: -1; 
+}
+
+#plant-name, #search-btn {
+  margin: auto;
+  background-color: transparent;
+  display: grid;
+  place-items: center;
+}
+
+.leaf {
+  margin-left: 5vh;
+  width: 250px;
+  height: 150px;
+  background-color: green;
+  border: 3px solid green;
+  border-width: 0 0 18px 18px;
+  border-color: green green darkgreen darkgreen;
+  border-radius: 80px 0 80px 0;
+  position: relative;
+  transform: rotate(-25deg);
+  overflow: hidden;
+}
+
+.leaf2 {
+  margin-left: -15vh;
+  width: 250px;
+  height: 150px;
+  background-color: green;
+  border: 3px solid green;
+  border-width: 0 0 18px 18px;
+  border-color: green green darkgreen darkgreen;
+  border-radius: 0 80px 0 80px;
+  position: relative;
+  transform: rotate(25deg);
+  overflow: hidden;
+}
+
+.leaf2:hover {
+transform: rotate(20deg);
+}
+
+.leaf:hover {
+transform: rotate(-20deg);
 }
