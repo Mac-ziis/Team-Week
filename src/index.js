@@ -16,7 +16,7 @@ function calculateTax(cost) {
 }
 
 function updateCost() {
-  const selectedType = document.querySelector('select[name="plant-type"]');
+  const selectedType = document.querySelector('select[name="plant-type"]').value;
   const quantity = parseFloat(document.getElementById('quantity').value);
   const plant = new Plant(selectedType, quantity);
   const cost = plant.calculateCost();
