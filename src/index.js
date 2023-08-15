@@ -42,3 +42,19 @@ function showReceipt() {
   receipt.classList.remove('hidden');
 }
 
+const plantTypeSelect = document.querySelector('select[name="plant-type"]');
+plantTypeSelect.addEventListener('change', () => {
+  updateCost();
+});
+
+function placeOrder() {
+  const selectedType = document.querySelector('select[name="plant-type"]');
+  const quantity = parseFloat(document.getElementById('quantity').value);
+  const plant = new Plant(selectedType, quantity);
+
+  updateReceipt(plant);
+  showReceipt();
+}
+
+const placeOrderButton = document.getElementById('place-rder-btn');
+placeOrderButton.addEventListener('click', placeOrder);
