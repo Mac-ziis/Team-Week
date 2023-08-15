@@ -8,6 +8,12 @@ import Plant from './js/seed-catalog.js';
 
 
 // UI Logic for seed-catalog.js
+document.addEventListener('DOMContentLoaded', function () {
+
+function calculateTax(cost) {
+  const taxRate = 0.18;
+  return cost * taxRate;
+}
 
 function updateCost() {
   const selectedType = document.querySelector('select[name="plant-type"]');
@@ -22,7 +28,7 @@ function updateCost() {
 
 function updateReceipt(plant) {
   const orderDetails = document.getElementById('order-details');
-  orderDetails.innerHTML = `Type: ${plant.type}<br>Quanitty: ${plant.quantity}`;
+  orderDetails.innerHTML = `Type: ${plant.type}<br>Quantity: ${plant.quantity}`;
 
   const cost = plant.calculateCost();
   const tax = calculateTax(cost);
@@ -56,5 +62,7 @@ function placeOrder() {
   showReceipt();
 }
 
-const placeOrderButton = document.getElementById('place-rder-btn');
+const placeOrderButton = document.getElementById('place-order-btn');
 placeOrderButton.addEventListener('click', placeOrder);
+
+});

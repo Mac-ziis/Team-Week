@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-  // Business Logic
+// Business Logic
 
   export default function Plant(type, quantity) {
     this.type = type;
@@ -21,10 +20,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     return cost * this.quantity;
   };
-
-  function calculateTax(cost) {
-    const taxRate = 0.18;
-    return cost * taxRate;
-  }
-  
-})
