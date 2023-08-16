@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plant Identification Application</title>
 </head>
+
 <body>
   <h1>Plant Freak Seed Order Catalog</h1>
   <form id="order-form">
-    <label for="plant-type">Select Plant Type:</label>
-    <select name="plant-type">
-      <option value="flower">Flower</option>
-      <option value="tree">Tree</option>
-      <option value="fruit-tree">Fruit Tree</option>
-      <option value="shrub">Shrub</option>
-      <option value="vegetable-seeds">Vegetable Seeds</option>
-      <option value="squash-seeds">Squash Seeds</option>
-      <option value="flower-starts">Flower starts</option>
-      <option value="veggie-starts">Veggie Starts</option>
-    </select>
-    <br> 
-    <label for="quantity">Quantity:</label>
-    <input type="number" id="quantity" name="quantity" value="1">
-    <br> 
+    <fieldset>
+      <legend>Select Plant Types:</legend>
+      <input type="checkbox" name="plant-type" value="flower"> Flower
+      <input type="number" name="quantity-flower" value="1"><br>
+      <input type="checkbox" name="plant-type" value="tree"> Tree
+      <input type="number" name="quantity-tree" value="1"><br>
+      <input type="checkbox" name="plant-type" value="fruit-tree"> Fruit Tree
+      <input type="number" name="quantity-fruit-tree" value="1"><br>
+      <input type="checkbox" name="plant-type" value="shrub"> Shrub
+      <input type="number" name="quantity-shrub" value="1"><br>
+      <input type="checkbox" name="plant-type" value="vegetable-seeds"> Vegetable Seeds
+      <input type="number" name="quantity-vegetable-seeds" value="1"><br>
+      <input type="checkbox" name="plant-type" value="squash-seeds"> Squash Seeds
+      <input type="number" name="quantity-squash-seeds" value="1"><br>
+      <input type="checkbox" name="plant-type" value="flower-starts"> Flower Starts
+      <input type="number" name="quantity-flower-starts" value="1"><br>
+      <input type="checkbox" name="plant-type" value="veggie-starts"> Veggie Starts
+      <input type="number" name="quantity-veggie-starts" value="1"><br>
+    </fieldset>
+    <br>
     <button type="button" id="place-order-btn">Place Order</button>
   </form>
-  <br> 
+  <br>
   <div id="receipt" class="hidden">
     <h2>Order Receipt</h2>
     <div id="order-details"></div>
@@ -34,4 +41,5 @@
     <div id="total-with-tax"></div>
   </div>
 </body>
+
 </html>
