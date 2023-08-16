@@ -1,13 +1,14 @@
 body {
+  font-family: 'BloggerSansBold';
   text-align: center;
   background: radial-gradient(ellipse at 75% 10%, white, lightblue, blue);
 }
 
 .titlecard {
-  font-family: 'BloggerSansBold';
+  margin-left: 50%;
   font-size: 70px;
   color: darkgreen;
-  -webkit-text-stroke: 8px darkgreen;
+  /* -webkit-text-stroke: 8px darkgreen; */
 }
 
 .container {
@@ -17,21 +18,45 @@ body {
   position: relative; 
 }
 
-.search-field, #search-btn {
+.search-field, #search-btn, #place-order-btn {
   color: black;
   border-radius: 3px;
   border: 2px solid black;
   margin: 10px;
   background-color: darkgreen;
-  display: grid;
+  display: inline-block;
+  padding: 0px 2px;
   place-items: center;
+}
+
+#shopping-btn {
+  color: black;
+  border-radius: 3px;
+  border: 2px solid green;
+  margin-top: 40px;
+  background-color: green;
+  display: inline-block;
+  padding: 0px 2px;
+  place-items: center;
+}
+
+#shopping-btn:hover {
+  color: darkgreen;
+  border: 2px solid darkgreen;
+  border-radius: 5px solid darkgreen;
+  transition: all 0.2s ease;
 }
 
 input[type="text"]::placeholder {
   color: green;
 }
 
-.search-field:hover, #search-btn:hover {
+.search-field:hover, #search-btn:hover, #place-order-btn:hover {
+  background-color: green;
+  transition: all 0.2s ease;
+}
+
+.search-field:focus {
   background-color: green;
 }
 
@@ -47,6 +72,7 @@ input[type="text"]::placeholder {
   position: relative;
   transform: rotate(-25deg);
   overflow: hidden;
+  box-shadow: rgba(10, 10, 10, 0.35) 10px 15px 15px;
 }
 
 .leaf2 {
@@ -61,18 +87,33 @@ input[type="text"]::placeholder {
   position: relative;
   transform: rotate(25deg);
   overflow: hidden;
+  box-shadow: rgba(10, 10, 10, 0.35) 10px 15px 15px;
 }
 
 .leaf2:hover {
 transform: rotate(20deg);
+transition: all 0.4s ease;
 }
 
 .leaf:hover {
 transform: rotate(-20deg);
+transition: all 0.4s ease;
+}
+
+#order-form {
+  margin-top: 5%;
+}
+
+input[type='number']{
+  width: 80px;
+} 
+
+
+.hidden {
+  /* display: none; */
 }
 
 #result-area {
-  /* display: none; */
   float: right;
   margin-right: 5%;
   width: 50%;
@@ -84,26 +125,5 @@ transform: rotate(-20deg);
   border-radius: 80px 0 80px 0;
   position: relative;
   overflow: hidden;
+  box-shadow: rgba(10, 10, 10, 0.35) 10px 15px 15px;
 }
-
-/* .container::before {
-  content: "";
-  position: absolute;
-  width: 8px; 
-  height: 100%; 
-  background-color: green;
-  left: 7%; 
-  transform: translateX(-5%); 
-  z-index: -1; 
-} */
-
-/* .background {
-  transform: rotate(3deg);
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 300;
-  background-attachment: fixed;
-  background: linear-gradient(transparent, green, darkgreen);
-  z-index: -1;
-} */

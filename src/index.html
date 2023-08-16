@@ -10,14 +10,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <div class="background"></div>
     <div class="container">
       <h1 class="titlecard">PLANT FREAK</h1>
       <div id="result-area">
-        <p>results</p>
+        <form id="order-form" class="hidden">
+          <fieldset>
+            <legend>Select Plant Types:</legend>
+            <input type="checkbox" name="plant-type" value="flower" /> Flower
+            <input
+              type="number"
+              name="quantity-flower"
+              value="1"
+              class="search-field"
+            /><br />
+            <input type="checkbox" name="plant-type" value="tree" /> Tree
+            <input
+              type="number"
+              name="quantity-tree"
+              value="1"
+              class="search-field"
+            /><br />
+            <input type="checkbox" name="plant-type" value="fruit-tree" /> Fruit
+            Tree
+            <input
+              type="number"
+              name="quantity-fruit-tree"
+              value="1"
+              class="search-field"
+            /><br />
+            <input type="checkbox" name="plant-type" value="shrub" /> Shrub
+            <input
+              type="number"
+              name="quantity-shrub"
+              value="1"
+              class="search-field"
+            /><br />
+            <input type="checkbox" name="plant-type" value="vegetable-seeds" />
+            Vegetable Seeds
+            <input
+              type="number"
+              name="quantity-vegetable-seeds"
+              value="1"
+              class="search-field"
+            /><br />
+            <input type="checkbox" name="plant-type" value="squash-seeds" />
+            Squash Seeds
+            <input
+              type="number"
+              name="quantity-squash-seeds"
+              value="1"
+              class="search-field"
+            /><br />
+            <input type="checkbox" name="plant-type" value="flower-starts" />
+            Flower Starts
+            <input
+              type="number"
+              name="quantity-flower-starts"
+              value="1"
+              class="search-field"
+            /><br />
+            <input type="checkbox" name="plant-type" value="veggie-starts" />
+            Veggie Starts
+            <input
+              type="number"
+              name="quantity-veggie-starts"
+              value="1"
+              class="search-field"
+            /><br />
+          </fieldset>
+          <br />
+          <button type="button" id="place-order-btn">Place Order</button>
+        </form>
+        <br />
+        <div id="receipt" class="hidden">
+          <h2>Order Receipt</h2>
+          <div id="order-details"></div>
+          <div id="total-cost"></div>
+          <div id="tax-amount"></div>
+          <div id="total-with-tax"></div>
+        </div>
       </div>
       <div class="leaf">
-        <h2>home</h2>
+        <h2>house</h2>
         <input
           type="text"
           class="search-field"
@@ -50,7 +124,7 @@
         <h1>local weather</h1>
       </div>
       <div class="leaf">
-        <h1>shopping</h1>
+        <button id="shopping-btn"><h1>shopping</h1></button>
       </div>
     </div>
   </body>
