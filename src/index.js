@@ -2,6 +2,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import Plant from './js/seed-catalog.js';
+import WeatherService from './js/weather-service';
 
 // UI logic for seed-catalog
 
@@ -60,6 +61,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const shoppingButton = document.getElementById('shopping-btn');
   shoppingButton.addEventListener('click', () => {
-    //make shit hidden
+    const orderForm = document.getElementById('order-form');
+    orderForm.classList.remove('hidden');
   });
+});
+
+// Ui for weatherservice
+
+function getWeather(city) {
+  let promise = WeatherService.getWeather(city);
+  promise.then(function(weatherDataArray) {
+    weatherElements(weatherDataArray);
+  }, function(errorArray) {
+    weatherError(errorArray);
+  });
+}
+
+function weatherElements(data) {
+  document.getElementById('result-area').innerText = `it's ${Math.round(1.8 *(data[0].main.temp - 273.15) + 32)} degrees, ${data[0].main.humidity}% humid.
+  The weather in ${data[1]} is ${data[0].weather[0].description}.`;
+}
+
+function weatherError(error) {
+  document.getElementById('result-area').innerText = `There was an error accessing the weather data for ${error[2]}: ${error[0].status} ${error[0].statusText}: ${error[1].message}`;
+}
+
+function weatherFormSubmission(event) {
+  event.preventDefault();
+  const city = document.getElementById("location").value;
+  document.getElementById("location").value = null;
+  getWeather(city);
+}
+
+const weatherLocation = document.getElementById('location-btn');
+  weatherLocation.addEventListener('click', (event) => {
+  weatherFormSubmission(event);
 });

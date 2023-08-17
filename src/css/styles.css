@@ -18,7 +18,7 @@ body {
   position: relative; 
 }
 
-.search-field, #search-btn, #place-order-btn {
+.search-field, #search-btn, #place-order-btn, #location-btn {
   color: black;
   border-radius: 3px;
   border: 2px solid black;
@@ -51,7 +51,7 @@ input[type="text"]::placeholder {
   color: green;
 }
 
-.search-field:hover, #search-btn:hover, #place-order-btn:hover {
+.search-field:hover, #search-btn:hover, #place-order-btn:hover, #location-btn:hover {
   background-color: green;
   transition: all 0.2s ease;
 }
@@ -110,7 +110,7 @@ input[type='number']{
 
 
 .hidden {
-  /* display: none; */
+  display: none;
 }
 
 #result-area {
@@ -127,3 +127,4 @@ input[type='number']{
   overflow: hidden;
   box-shadow: rgba(10, 10, 10, 0.35) 10px 15px 15px;
 }
+
